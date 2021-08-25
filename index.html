@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div style="text-align: center; font-size: 30px; padding-top: 3rem; font-family: 'Bauhaus 93';">
+    <span style="color: blue;">TIC</span>
+    <span style="color: red;">TAC</span>
+    <span style="color: green;">TOE</span>
+    <span style="color: blue;">!</span>
+</div>
+<div style="padding: 2rem 6rem 0 30rem;">
+    <div>
+        <span id="playerx" style="font-size: 20px; color: green;"></span><span style="font-size: 20px;" id="px-score">0</span>
+        <span id="playery" style="font-size: 20px; color: blue; margin-left: 20px;"></span><span style="font-size: 20px;" id="py-score">0</span>
+        <table style="background: darkslategrey;">
+            <tr>
+                <td id="1" class="box"></td>
+                <td id="2" class="box"></td>
+                <td  id="3"  class="box"></td>
+            </tr>
+            <tr>
+                <td id="4"  class="box"></td>
+                <td id="5"  class="box"></td>
+                <td id="6" class="box"></td>
+            </tr>
+            <tr>
+                <td  id="7" class="box"></td>
+                <td id="8"  class="box"></td>
+                <td id="9"  class="box"></td>
+            </tr>
+        </table>
+    </div>
+    <h2 id="results"></h2>
+</div>
+
+
+<div id='modal' style="width: 100%; height: 100%; margin-top: -500px; position: absolute; background: rgba(0,0,0, 0.4);">
+    <div style="padding: 8rem 20rem 0 20rem;">
+        <div style="background: white; text-align: center; box-shadow: darkgray 1px 1px 1px; padding: 1rem 1rem 0 0; border-radius: 10px;" >
+            <div style="text-align: right;"><!--<button onclick="modal_close()" id="modal-controller">X</button>--></div>
+            <div style="padding: 0.5rem 7rem 4rem 7rem;">
+                <div style="text-align: center">
+                    <h1>Welcome to Tic Tac Toe</h1>
+                    <h3>Choose your Symbol</h3>
+                </div>
+                <div>
+                    <label style="text-align: left;">Player X</label><br>
+                    <input id="px" class="input" type="text" placeholder="enter your name"><br><br>
+                    <label>Player O</label><br>
+                    <input id="py" class="input" type="text" placeholder="enter your name">
+
+                </div>
+                <button onclick="start()" id="modal-controller-2" style="margin-top: 2rem; font-size: 18px">Start</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id='modal1' style="width: 100%; height: 100%; margin-top: -486px; position: absolute; background: rgba(0,0,0, 0.4);">
+    <div style="padding: 8rem 20rem 0 20rem;">
+        <div style="background: white; text-align: center; box-shadow: darkgray 1px 1px 1px; padding: 1rem 1rem 0 0; border-radius: 10px;" >
+            <div style="text-align: right;"><button onclick="" id="modal-controller-close">X</button></div>
+            <div style="padding: 0.5rem 7rem 4rem 7rem;">
+                <div style="text-align: center">
+                    <div id="won"></div>
+                    <div><h2>Wins this round</h2></div>
+                </div>
+                <button onclick="restart()" id="modal-controller-3" style="margin-top: 2rem; font-size: 18px">Play again</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; margin-top: 80px;">
+    <a style="text-align: center;" href="https://delaliebrown-portfolio.herokuapp.com/">By Rawllings</a>
+</footer>
+<script src="han.js"></script>
+</body>
+</html>
