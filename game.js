@@ -27,14 +27,17 @@ won = document.getElementById('won')
 
 boxes.forEach(function (box) {
     box.addEventListener('click', function () {
-        if(this.innerHTML === ''){
-            this.innerHTML = val
-        }
+        new_val = val
 
         if (val === 'X'){
             val = 'O'
-        }else if(val === 'O'){
+        }else{
             val = 'X'
+        }
+
+
+        if(this.innerHTML.length <= 0){
+            this.innerHTML = new_val
         }
 
         if (is_winner_found === 0){
@@ -44,7 +47,7 @@ boxes.forEach(function (box) {
 
     })
 
-})
+});
 
 function if_equals_x(a,b,c) {
     if (a==='X' && b==='X' && c==='X'){
@@ -125,7 +128,7 @@ function check_winner() {
            }, 500)
         }
     }else if(winner.length === 0 && counter === 9){
-        won.innerHTML = `<h2>The Game is a Draw</h2><h4>No one wins this round</h4>`
+        won.innerHTML = `<h2>The Game is a Draw</h2><h4>No One</h4>`
         modalPage1.style.display = 'block'
     }
 

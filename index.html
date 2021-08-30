@@ -6,7 +6,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background: url('backdrop.jpg')">
 
 <div style="text-align: center; font-size: 30px; padding-top: 3rem; font-family: 'Bauhaus 93';">
     <span style="color: blue;">TIC</span>
@@ -16,47 +16,50 @@
 </div>
 <div style="padding: 2rem 6rem 0 30rem;">
     <div>
-        <span id="playerx" style="font-size: 20px; color: green;"></span><span style="font-size: 20px;" id="px-score">0</span>
-        <span id="playery" style="font-size: 20px; color: blue; margin-left: 20px;"></span><span style="font-size: 20px;" id="py-score">0</span>
-        <table style="background: darkslategrey;">
-            <tr>
-                <td id="1" class="box"></td>
-                <td id="2" class="box"></td>
-                <td  id="3"  class="box"></td>
-            </tr>
-            <tr>
-                <td id="4"  class="box"></td>
-                <td id="5"  class="box"></td>
-                <td id="6" class="box"></td>
-            </tr>
-            <tr>
-                <td  id="7" class="box"></td>
-                <td id="8"  class="box"></td>
-                <td id="9"  class="box"></td>
-            </tr>
-        </table>
+        <span id="playerx" class="players" style="color: green;"></span><span style=" font-family: sans-serif; font-size: 20px;" id="px-score">0</span>
+        <span id="playery" class="players" style="color: blue; margin-left: 20px;"></span><span  style="font-family: sans-serif; font-size: 20px;" id="py-score">0</span>
+        <div style="overflow-x:auto;">
+            <table style="background: white; border: 2px solid black;">
+                <tr>
+                    <td id="1" class="box"></td>
+                    <td id="2" class="box"></td>
+                    <td  id="3"  class="box"></td>
+                </tr>
+                <tr>
+                    <td id="4"  class="box"></td>
+                    <td id="5"  class="box"></td>
+                    <td id="6" class="box"></td>
+                </tr>
+                <tr>
+                    <td  id="7" class="box"></td>
+                    <td id="8"  class="box"></td>
+                    <td id="9"  class="box"></td>
+                </tr>
+            </table>
+
+        </div>
     </div>
     <h2 id="results"></h2>
 </div>
 
 
-<div id='modal' style="width: 100%; height: 100%; margin-top: -500px; position: absolute; background: rgba(0,0,0, 0.4);">
+<div id='modal'>
     <div style="padding: 8rem 20rem 0 20rem;">
-        <div style="background: white; text-align: center; box-shadow: darkgray 1px 1px 1px; padding: 1rem 1rem 0 0; border-radius: 10px;" >
+        <div class="inner-modal" style="background: white; text-align: center; box-shadow: darkgray 1px 1px 1px; padding: 1rem 1rem 0 0; border-radius: 10px;" >
             <div style="text-align: right;"><!--<button onclick="modal_close()" id="modal-controller">X</button>--></div>
             <div style="padding: 0.5rem 7rem 4rem 7rem;">
-                <div style="text-align: center">
+                <div style="text-align: center; font-family: Garamond">
                     <h1>Welcome to Tic Tac Toe</h1>
-                    <h3>Choose your Symbol</h3>
+                    <h3 style="color: indianred">Choose your Symbol</h3>
                 </div>
                 <div>
-                    <label style="text-align: left;">Player X</label><br>
-                    <input id="px" class="input" type="text" placeholder="enter your name"><br><br>
-                    <label>Player O</label><br>
-                    <input id="py" class="input" type="text" placeholder="enter your name">
+                    <label style="text-align: left; color: green; font-family: 'Bauhaus 93';">Player X</label><br>
+                    <input id="px" class="input" type="text" placeholder="Enter your name"><br><br>
+                    <label style="color: blue; font-family: 'Bauhaus 93';">Player O</label><br>
+                    <input id="py" class="input" type="text" placeholder="Enter your name">
 
                 </div>
-                <button onclick="start()" id="modal-controller-2" style="margin-top: 2rem; font-size: 18px">Start</button>
+                <button class="btn-green" onclick="start()" id="modal-controller-2" style="margin-top: 2rem; font-size: 18px">Start</button>
 
             </div>
 
@@ -65,16 +68,16 @@
 </div>
 
 
-<div id='modal1' style="width: 100%; height: 100%; margin-top: -486px; position: absolute; background: rgba(0,0,0, 0.4);">
+<div id='modal1'>
     <div style="padding: 8rem 20rem 0 20rem;">
-        <div style="background: white; text-align: center; box-shadow: darkgray 1px 1px 1px; padding: 1rem 1rem 0 0; border-radius: 10px;" >
+        <div class="inner-modal1" style="background: white; text-align: center; box-shadow: darkgray 1px 1px 1px; padding: 1rem 1rem 0 0; border-radius: 10px;" >
             <div style="text-align: right;"><button onclick="" id="modal-controller-close">X</button></div>
             <div style="padding: 0.5rem 7rem 4rem 7rem;">
                 <div style="text-align: center">
                     <div id="won"></div>
                     <div><h2>Wins this round</h2></div>
                 </div>
-                <button onclick="restart()" id="modal-controller-3" style="margin-top: 2rem; font-size: 18px">Play again</button>
+                <button class="btn-green" onclick="restart()" id="modal-controller-3" style="margin-top: 2rem; font-size: 18px">Play again</button>
 
             </div>
 
